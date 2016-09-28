@@ -1,5 +1,5 @@
 
-;; Enable installation of packages from MELP
+;; Enable installation of packages from MELPA
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
@@ -11,23 +11,12 @@
 
 ;; Stores emacs themes here
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'zenburn t)
+;;(load-theme 'zenburn t)
 
+;; store all backup and autosave files in the tmp dir
+;; https://www.emacswiki.org/emacs/BackupDirectory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
-
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("0e219d63550634bc5b0c214aced55eb9528640377daf486e13fb18a32bf39856" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
