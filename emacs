@@ -11,7 +11,8 @@
 ;;--------------------------------------------------------------------------------------------
 ;; Stores emacs themes here
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;;(load-theme 'zenburn t)
+(load-theme 'gruvbox t)
+
 ;;--------------------------------------------------------------------------------------------
 ;; store all backup and autosave files in the tmp dir
 ;; https://www.emacswiki.org/emacs/BackupDirectory
@@ -19,14 +20,17 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
 ;;--------------------------------------------------------------------------------------------
 ;; Adding autocomplete for Python
 (autoload 'jedi:setup "jedi" nil t)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+
 ;;--------------------------------------------------------------------------------------------
 ;; Setting up the multiple-cursors package
 (global-set-key (kbd "C-c m c") 'mc/edit-lines)
+
 ;;--------------------------------------------------------------------------------------------
 ;; init beacon package
 (beacon-mode 1)
@@ -63,6 +67,7 @@ activate-mark-hook"
 
 (ad-activate 'exchange-point-and-mark)
 (add-hook 'activate-mark-hook 'pg-show-mark)
+
 ;;--------------------------------------------------------------------------------------------
 ;; add ace jump
 (add-to-list 'load-path "which-folder-ace-jump-mode-file-in/")
@@ -75,3 +80,25 @@ activate-mark-hook"
 (autoload 'idomenu "idomenu" nil t)
 (global-set-key (kbd "M-i") 'ido-goto-symbol)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "d320493111089afba1563bc3962d8ea1117dd2b3abb189aeebdc8c51b5517ddb" default)))
+ '(package-selected-packages
+   (quote
+    (multiple-cursors zenburn-theme exec-path-from-shell virtualenv jedi gruvbox-theme beacon ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;;--------------------------------------------------------------------------------------------
+;; Get jedi to work on macs
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
