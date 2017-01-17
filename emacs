@@ -102,3 +102,4 @@ activate-mark-hook"
 ;; Get jedi to work on macs
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+  
