@@ -118,8 +118,12 @@ fi
 stty -ixon
 
 
+################################################################################ ROS
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source ~/.rvm/scripts/rvm
 source /opt/ros/indigo/setup.bash
-
 source ~/Programming/catkin_ws/devel/setup.bash
+
+################################################################################ xterm colors
+
+
