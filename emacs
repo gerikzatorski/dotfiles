@@ -31,6 +31,7 @@
 ;;-------------------------------------------------------------------------------------------- VISUAL
 ;; Stores emacs themes here
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+<<<<<<< HEAD
 ;;(load-theme 'zenburn t)
 ;;(load-theme 'gruvbox t)
 (load-theme 'monokai t)
@@ -38,6 +39,9 @@
 ;; set transparency
 ;;(set-frame-parameter (selected-frame) 'alpha '(85 85))
 ;;(add-to-list 'default-frame-alist '(alpha 85 85))
+=======
+(load-theme 'gruvbox t)
+>>>>>>> origin/master
 
 ;;--------------------------------------------------------------------------------------------
 ;; store all backup and autosave files in the tmp dir
@@ -48,9 +52,20 @@
       `((".*" ,temporary-file-directory t)))
 
 ;;--------------------------------------------------------------------------------------------
+<<<<<<< HEAD
 ;; Setup .launch and .urdf files to open in 
 (add-to-list 'auto-mode-alist '("\\.launch$" . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.urdf$" . xml-mode))
+=======
+;; Adding autocomplete for Python
+(autoload 'jedi:setup "jedi" nil t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
+;;--------------------------------------------------------------------------------------------
+;; Setting up the multiple-cursors package
+(global-set-key (kbd "C-c m c") 'mc/edit-lines)
+>>>>>>> origin/master
 
 ;;--------------------------------------------------------------------------------------------
 ;; TODO
@@ -93,10 +108,44 @@ activate-mark-hook"
 
 (ad-activate 'exchange-point-and-mark)
 (add-hook 'activate-mark-hook 'pg-show-mark)
+<<<<<<< HEAD
+=======
+
+;;--------------------------------------------------------------------------------------------
+;; add ace jump
+(add-to-list 'load-path "which-folder-ace-jump-mode-file-in/")
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+>>>>>>> origin/master
 
 ;;--------------------------------------------------------------------------------------------
 (transient-mark-mode 0)
 (xclip-mode 1)
 
+<<<<<<< HEAD
 ;;(define-key global-map (kbd "C-S-C") 'clipboard-kill-ring-save)
 ;;(define-key global-map (kbd "C-S-V") 'clipboard-yank)
+=======
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "d320493111089afba1563bc3962d8ea1117dd2b3abb189aeebdc8c51b5517ddb" default)))
+ '(package-selected-packages
+   (quote
+    (multiple-cursors zenburn-theme exec-path-from-shell virtualenv jedi gruvbox-theme beacon ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;;--------------------------------------------------------------------------------------------
+;; Get jedi to work on macs
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+>>>>>>> origin/master
