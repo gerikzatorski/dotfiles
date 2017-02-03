@@ -90,7 +90,7 @@ activate-mark-hook"
     ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "d320493111089afba1563bc3962d8ea1117dd2b3abb189aeebdc8c51b5517ddb" default)))
  '(package-selected-packages
    (quote
-    (multiple-cursors zenburn-theme exec-path-from-shell virtualenv jedi gruvbox-theme beacon ace-jump-mode))))
+    (web-mode web-beautify multiple-cursors zenburn-theme exec-path-from-shell virtualenv jedi gruvbox-theme beacon ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -102,4 +102,14 @@ activate-mark-hook"
 ;; Get jedi to work on macs
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
-  
+
+;;--------------------------------------------------------------------------------------------
+;; change html indentation to 4
+(add-hook 'html-mode-hook
+        (lambda ()
+          ;; Default indentation is usually 2 spaces, changing to 4.
+          (set (make-local-variable 'sgml-basic-offset) 4)))
+	  
+;;--------------------------------------------------------------------------------------------
+;; Custom modes for certain file extensions
+
