@@ -1,3 +1,4 @@
+;; Emacs config file
 ;;--------------------------------------------------------------------------------------------
 ;; Enable installation of packages from MELPA
 (require 'package) ;; You might already have this line
@@ -90,7 +91,7 @@ activate-mark-hook"
     ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "d320493111089afba1563bc3962d8ea1117dd2b3abb189aeebdc8c51b5517ddb" default)))
  '(package-selected-packages
    (quote
-    (web-mode web-beautify multiple-cursors zenburn-theme exec-path-from-shell virtualenv jedi gruvbox-theme beacon ace-jump-mode))))
+    (markdown-preview-mode markdown-mode web-mode web-beautify multiple-cursors zenburn-theme exec-path-from-shell virtualenv jedi gruvbox-theme beacon ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -111,5 +112,9 @@ activate-mark-hook"
           (set (make-local-variable 'sgml-basic-offset) 4)))
 	  
 ;;--------------------------------------------------------------------------------------------
-;; Custom modes for certain file extensions
+;; Custom major modes for certain files
+;; .handlebars files open in html
+(add-to-list 'auto-mode-alist '("\\.handlebars\\'" . html-mode))
 
+;; open this .emacs file based on it's first line
+(add-to-list 'magic-mode-alist '(";; Emacs config file" . lisp-mode) )
