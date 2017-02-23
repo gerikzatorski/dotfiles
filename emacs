@@ -1,5 +1,9 @@
 ;; Emacs config file
 ;;--------------------------------------------------------------------------------------------
+;; load other files
+(add-to-list 'load-path' "functions.el")
+
+;;--------------------------------------------------------------------------------------------
 ;; Enable installation of packages from MELPA
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
@@ -91,7 +95,7 @@ activate-mark-hook"
     ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "d320493111089afba1563bc3962d8ea1117dd2b3abb189aeebdc8c51b5517ddb" default)))
  '(package-selected-packages
    (quote
-    (markdown-preview-mode markdown-mode web-mode web-beautify multiple-cursors zenburn-theme exec-path-from-shell virtualenv jedi gruvbox-theme beacon ace-jump-mode))))
+    (arduino-mode markdown-preview-mode markdown-mode web-mode web-beautify multiple-cursors zenburn-theme exec-path-from-shell virtualenv jedi gruvbox-theme beacon ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
