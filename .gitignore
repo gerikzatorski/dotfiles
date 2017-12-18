@@ -1,0 +1,6 @@
+# Emacs
+*.emacs.desktop
+
+# Mac
+.DS_Store
+

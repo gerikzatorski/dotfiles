@@ -1,8 +1,3 @@
-
-# ROS
-source /opt/ros/indigo/setup.bash
-source ~/catkin_ws/devel/setup.bash
-
 ##################################################
 # Aliases
 ##################################################
@@ -36,12 +31,17 @@ mcd () {
     cd $1
 }
 
+##################################################
+# Misc
+##################################################
 
+# ROS
+source /opt/ros/kinetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
 
-
-
-
-
+##################################################
+# Ubuntu Defaults
+##################################################
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -160,3 +160,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+[ -r /home/gerik/.byobu/prompt ] && . /home/gerik/.byobu/prompt   #byobu-prompt#
