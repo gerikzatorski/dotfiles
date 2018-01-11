@@ -22,29 +22,10 @@ shopt -s checkwinsize
 shopt -s cdspell
 shopt -s checkwinsize
 
-##################################################
-# Aliases
-##################################################
-
-# python 3 default
-alias python='python3'
-
 # Alias definitions (see /usr/share/doc/bash-doc/examples)
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-alias ll='ls -l'
-alias la='ls -la'
-
-# reboot / halt / poweroff
-alias reboot='sudo /sbin/reboot'
-alias poweroff='sudo /sbin/poweroff'
-alias halt='sudo /sbin/halt'
-alias shutdown='sudo /sbin/shutdown'
-
-# system commands *
-alias hibernate='sudo systemctl hibernate'
 
 ##################################################
 # Colors
