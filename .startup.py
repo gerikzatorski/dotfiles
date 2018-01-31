@@ -8,5 +8,4 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 print("(imported numpy and matplotlib)")
 
-
 pp = pprint.pprint
